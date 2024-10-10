@@ -1,0 +1,112 @@
+%
+% Simple Zine LaTeX template
+% Created By: Mathieu Landretti
+%
+
+\usepackage[landscape]{booklet}
+\usepackage[margin=1.5in]{geometry}
+\usepackage[subpreambles=true]{standalone}
+\usepackage[english]{babel} 
+
+\usepackage{import}
+\usepackage{xcolor}							  
+\usepackage{graphicx,wrapfig,wallpaper} 	% Image related packages
+\usepackage{multicol,type1cm,lettrine}		% Text formatting
+\usepackage{scrextend}				
+
+\renewcommand{\familydefault}{\sfdefault} 	% Sans-serif font
+
+% URL Styling
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{url,hyperref}							  
+\hypersetup{
+	colorlinks=true,
+	linkcolor=orange,
+	filecolor=magenta,
+	urlcolor=cyan
+}
+\urlstyle{same}
+
+% 2 Column Article environment
+% Example:
+%
+% \begin{article*}
+%	Content goes here...
+% \end{article*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{article*}[2]{
+	\newpage
+	\begingroup
+		\section*{#1}
+		\textit{by #2}
+		\vspace{2em}
+		\begin{multicols}{2}}{
+		\end{multicols}
+		\noindent
+		\color{orange}{\rule{\textwidth}{0.08cm}}
+	\endgroup
+}
+ 
+% Wrap quote in column
+% Example:
+% 
+% \bigquote{L}{Quote goes here}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bigquote}[2]{
+\setlength{\columnsep}{10pt}
+\begin{wrapfigure}{#1}{.2\textwidth}
+	\begingroup
+	\renewcommand{\baselinestretch}{.9}
+	\begin{addmargin}[-1.5cm]{0em}
+		\large\itshape
+		\vskip 5pt
+		\color{gray}"#2"
+		\vskip 5pt
+	\end{addmargin}
+	\endgroup
+\end{wrapfigure}
+}
+
+% Figure in column
+% Example:
+%
+% \fig{./path/to/image.jpg}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\fig}[1]{
+	\begingroup
+	\begin{minipage}{\linewidth}
+		\centering
+		\vspace{1em}
+		\setlength{\fboxrule}{0.08cm}
+		\color{orange}{
+		\fbox{\includegraphics[width=0.8\textwidth]{"#1"}}}
+		\vspace{1em}
+	\end{minipage}
+ 	\endgroup
+}
+
+
+% Poem environment
+% Example:
+%
+% \begin{poem*}{Title}{Author}
+%	Formatting a poem\\
+% 	is easy with this template\\
+% 	you should try it now.
+% \end{poem*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{poem*}[2]{
+	\newpage
+	\begingroup
+		\begin{flushright}
+			\textbf{\Large{#1}}\\
+			\textit{by #2}
+			\color{orange}{\rule{\textwidth}{0.08cm}}
+		\end{flushright}
+		\vfill
+			\begin{verse} \large}{ \end{verse}
+		\vfill
+		\noindent
+		\color{orange}{\rule{\textwidth}{0.08cm}}
+	\endgroup
+}
