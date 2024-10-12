@@ -1,0 +1,4 @@
+# Ignore all TeX output files
+*.aux
+*.log
+*.toc

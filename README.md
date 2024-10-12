@@ -2,7 +2,7 @@
 
 A zine booklet template in TeX. Lovingly inspired by [this repo](https://github.com/sylvain-kern).
 
-## Structure 
+## Custom Environments 
 
 This package provides two custom environments for typesetting articles and 
 poems. Examples of these templates can be found in the `sec` directory in the.
@@ -22,9 +22,12 @@ Example of a poem.
 \begin{poem*}{Title}{Author}
     A poem goes here\\
     it uses the verse package\\
-    It's easy to use!\\
+    it's easy to use!\\
 \end{poem*}
 ```
+## Adding Chapters 
+
+
 ## Building 
 
 In order to build a PDF, run the `pdflatex` command on the main file (you 
