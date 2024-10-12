@@ -27,6 +27,31 @@ Example of a poem.
 ```
 ## Adding Chapters 
 
+To add a chapter, create a new file in the `sec` directory. Each chapter is a 
+standalone TeX file that must be called in the main file.
+
+```
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+    \chapter{Chapter Title}
+    \ThisLRCornerWallPaper}{1.2}{../img/image-title.ext}
+    \begin{article*}{Title}{Jane Doe}
+        Content of article (or other environment. Goes here.
+    \end{article*}
+\end{document}
+```
+
+After saving the file, if you want to include this chapter in the final output,
+make sure to add it to the `main.tex` file without the `.tex` extension.
+
+```
+\documentclass[12pt]{book}
+\input{preamble.tex}
+\begin{document}
+    \tableofcontents
+    \import{./sec/}{chapterFileName}
+\end{document}
+```
 
 ## Building 
 

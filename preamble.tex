@@ -10,11 +10,19 @@
 
 \usepackage{import}
 \usepackage{xcolor}							  
-\usepackage{graphicx,wrapfig,wallpaper} 	% Image related packages
-\usepackage{multicol,type1cm,lettrine}		% Text formatting
+\usepackage{graphicx,wrapfig,wallpaper} 		% Image related packages
+\usepackage{multicol,type1cm,lettrine,titlesec}	% Text formatting
 \usepackage{scrextend}				
 
-\renewcommand{\familydefault}{\sfdefault} 	% Sans-serif font
+\renewcommand{\familydefault}{\sfdefault} 		% Sans-serif font
+
+% Customize chapter headings 
+\titleformat{\chapter}[display]
+  {\bfseries\Huge\color{white}}
+  {\colorbox{orange}{\chaptertitlename \hspace{0.05em} \thechapter}}{0.1em}{
+	\color{white}
+	\colorbox{orange}
+  }
 
 % URL Styling
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,7 +38,7 @@
 % 2 Column Article environment
 % Example:
 %
-% \begin{article*}
+% \begin{article*}{Title}{Jane Doe}
 %	Content goes here...
 % \end{article*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,7 +97,7 @@
 % Poem environment
 % Example:
 %
-% \begin{poem*}{Title}{Author}
+% \begin{poem*}{Title}{John Doe}
 %	Formatting a poem\\
 % 	is easy with this template\\
 % 	you should try it now.
@@ -110,3 +118,4 @@
 		\color{orange}{\rule{\textwidth}{0.08cm}}
 	\endgroup
 }
+
