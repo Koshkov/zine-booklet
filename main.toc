@@ -1,4 +1,0 @@
-\babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Lorem Ipsum}{5}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Nulla Pariatur}{9}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Duis Aute}{13}{chapter.3}%
