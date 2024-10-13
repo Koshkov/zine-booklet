@@ -12,17 +12,15 @@
 \usepackage{xcolor}							  
 \usepackage{graphicx,wrapfig,wallpaper} 		% Image related packages
 \usepackage{multicol,type1cm,lettrine,titlesec}	% Text formatting
-\usepackage{scrextend}				
+\usepackage{scrextend,titling}				
 
 \renewcommand{\familydefault}{\sfdefault} 		% Sans-serif font
 
 % Customize chapter headings 
 \titleformat{\chapter}[display]
-  {\bfseries\Huge\color{white}}
-  {\colorbox{orange}{\chaptertitlename \hspace{0.05em} \thechapter}}{0.1em}{
-	\color{white}
-	\colorbox{orange}
-  }
+  {\fontsize{29.86}{9}\bfseries\color{white}}
+  {}{0.1em}
+  {\color{white} \colorbox{orange}}
 
 % URL Styling
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -118,4 +116,22 @@
 		\color{orange}{\rule{\textwidth}{0.08cm}}
 	\endgroup
 }
+
+% Art environment
+% Example:
+%
+% \begin{art*}{Title}{John Doe}{/path/to/image}
+% \end{art*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{art*}[3]{
+	\begingroup
+		\begin{flushright}
+			\textbf{\Large{#1}}\\
+			\textit{by #2}
+			\end{flushright}
+		\includegraphics[width=\textwidth]{#3}
+		}{ 
+	\endgroup
+}
+
 
